@@ -33,6 +33,13 @@
     header {
       padding: 2rem 1rem;
     }
+
+    /* ✅ Réduction du logo sur mobile */
+    @media (max-width: 576px) {
+      .logo-mobile {
+        max-width: 200px !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -40,7 +47,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container px-5">
       <a class="navbar-brand" href="index.html">
-        <img src="assets/logo.png" alt="Auto's Alban">
+        <img src="assets/logogris.png" alt="Auto's Alban">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
@@ -60,7 +67,7 @@
   <header class="py-5">
     <div class="container px-5 text-center">
       <div class="mb-4">
-        <img src="assets/logo.png" alt="Auto's Alban" class="img-fluid" style="max-width: 400px;">
+        <img src="assets/logo.png" alt="Auto's Alban" class="img-fluid logo-mobile" style="max-width: 400px;">
       </div>
       <h1 class="display-5 fw-bold text-white mb-2">Votre technicien automobile de confiance</h1>
       <p class="lead text-white-50 mb-4">Auto's Alban vous accompagne avec expertise et passion pour tous vos besoins mécaniques.</p>
