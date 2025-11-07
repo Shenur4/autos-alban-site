@@ -30,6 +30,50 @@
       background-color: #fff;
       color: #000;
     }
+
+    /* 🌞 Mode clair */
+    .light-mode {
+      background-color: #fff;
+      color: #000;
+    }
+    .light-mode .navbar {
+      background-color: #f8f9fa;
+    }
+    .light-mode .btn-outline-light {
+      color: #000;
+      border-color: #000;
+    }
+    .light-mode .btn-outline-light:hover {
+      background-color: #000;
+      color: #fff;
+    }
+    .light-mode .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .light-mode .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+    .light-mode .text-white {
+      color: #000 !important;
+    }
+    .light-mode .text-white-50 {
+      color: #555 !important;
+    }
+    .light-mode .bg-dark {
+      background-color: #f8f9fa !important;
+    }
+    .light-mode footer {
+      color: #000;
+    }
+    .light-mode .navbar-dark .navbar-nav .nav-link {
+      color: #000 !important;
+    }
+    .light-mode .navbar-dark .navbar-nav .nav-link.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -49,6 +93,10 @@
           <li class="nav-item"><a class="nav-link active" href="tarifs.html">Tarifs</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
         </ul>
+        <!-- 🌗 Bouton de thème -->
+        <button id="themeToggle" class="btn btn-outline-light ms-3" title="Changer le thème">
+          <i class="bi bi-brightness-high"></i>
+        </button>
       </div>
     </div>
   </nav>
@@ -105,8 +153,23 @@
     </div>
   </footer>
 
-  <!-- Scripts Bootstrap -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/scripts.js"></script>
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+
+    // Appliquer le thème sauvegardé au chargement
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+
+    // Basculer le thème et sauvegarder
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      const mode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+      localStorage.setItem('theme', mode);
+    });
+  </script>
 </body>
 </html>
