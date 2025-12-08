@@ -93,7 +93,11 @@
             <div class="row gx-5 justify-content-center">
                 <div class="col-12 col-lg-6">
                     <!-- Formulaire WhatsApp + Email -->
-                    <form>
+                    <form action="https://formsubmit.co/autoalban24@gmail.com" method="POST">
+                        <!-- Champs cachés FormSubmit -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://shenur4.github.io/autos-alban-site/confirmation.html">
+
                         <div class="mb-3"><input class="form-control" type="text" id="Nom" name="Nom" placeholder="Votre nom" required /></div>
                         <div class="mb-3"><input class="form-control" type="email" id="Email" name="Email" placeholder="Votre email" required /></div>
                         <div class="mb-3"><input class="form-control" type="tel" id="Téléphone" name="Téléphone" placeholder="Votre numéro" required /></div>
@@ -111,16 +115,11 @@
                             </button>
 
                             <!-- Bouton Email -->
-                            <button formaction="https://formsubmit.co/autoalban24@gmail.com" 
-                                    formmethod="POST" 
-                                    class="btn btn-danger btn-lg">
-                                <i class="bi bi-envelope-fill"></i> Envoyer par Email
+                            <button type="submit" class="btn btn-danger btn-lg">
+                                <img src="assets/gmail.png" alt="Gmail" style="height:22px; margin-right:8px; vertical-align:middle;">
+                                Envoyer par Gmail
                             </button>
                         </div>
-
-                        <!-- Champs cachés pour formsubmit -->
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://autoalban.netlify.app/confirmation.html">
                     </form>
                 </div>
             </div>
@@ -140,17 +139,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
     <script>
-        const toggleBtn = document.getElementById('themeToggle');
+                const toggleBtn = document.getElementById('themeToggle');
         if (localStorage.getItem('theme') === 'light') {
             document.body.classList.add('light-mode');
         }
         toggleBtn.addEventListener('click', () => {
             document.body.classList.toggle('light-mode');
-                        const mode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+            const mode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
             localStorage.setItem('theme', mode);
         });
 
-        // 🚀 Fonction WhatsApp avec redirection vers confirmation
+        // 🚀 Fonction WhatsApp avec redirection vers Netlify
         function sendToWhatsApp(e) {
             e.preventDefault();
 
@@ -172,9 +171,9 @@ Nom: ${nom}%0AEmail: ${email}%0ATéléphone: ${tel}%0AMarque: ${marque}%0AModèl
             // Ouvre WhatsApp dans un nouvel onglet
             window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
 
-            // Redirige l’onglet courant vers la confirmation
+            // Redirige l’onglet courant vers la confirmation hébergée sur Netlify
             setTimeout(() => {
-                window.location.href = "confirmation.html";
+                window.location.href = "https://autoalban.netlify.app/confirmation.html";
             }, 500);
         }
     </script>
