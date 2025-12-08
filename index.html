@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Auto's Alban - Votre Technicien Automobile</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- ✅ Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <style>
@@ -110,14 +111,13 @@
 
                         <div class="d-grid gap-2">
                             <!-- Bouton WhatsApp -->
-                            <button type="button" class="btn btn-success btn-lg" onclick="sendToWhatsApp(event)">
+                            <button type="button" class="btn btn-success btn-lg" onclick="sendToWhatsApp(event)" title="Envoyer sur WhatsApp">
                                 <i class="bi bi-whatsapp"></i> Envoyer sur WhatsApp
                             </button>
 
                             <!-- Bouton Email -->
-                            <button type="submit" class="btn btn-danger btn-lg">
-                                <img src="assets/gmail.png" alt="Gmail" style="height:22px; margin-right:8px; vertical-align:middle;">
-                                Envoyer par Gmail
+                            <button type="submit" class="btn btn-danger btn-lg" title="Envoyer par Email">
+                                <i class="bi bi-envelope-fill"></i> Envoyer par Email
                             </button>
                         </div>
                     </form>
@@ -139,13 +139,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
     <script>
-                const toggleBtn = document.getElementById('themeToggle');
+        const toggleBtn = document.getElementById('themeToggle');
         if (localStorage.getItem('theme') === 'light') {
             document.body.classList.add('light-mode');
         }
         toggleBtn.addEventListener('click', () => {
             document.body.classList.toggle('light-mode');
-            const mode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+                        const mode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
             localStorage.setItem('theme', mode);
         });
 
